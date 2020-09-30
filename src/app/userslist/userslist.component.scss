@@ -22,5 +22,12 @@ mat-card {
 }
 
 .phoneCell {
+  color: unset;
+  transition: ease-in-out .5s color;
+}
+
+.phoneCell:hover {
   cursor: pointer;
+  color: blue;
+  transition: ease-in-out .5s color;
 }
