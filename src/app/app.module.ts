@@ -8,16 +8,28 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCardModule } from '@angular/material/card';
+
+import { UserslistComponent } from './userslist/userslist.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserslistComponent
   ],
   imports: [
     BrowserModule,
     MatTabsModule,
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    HttpClientModule,
     AngularFireMessagingModule,
     AngularFireModule.initializeApp(environment.firebase),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),

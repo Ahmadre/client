@@ -1,0 +1,22 @@
+app-userslist {
+  margin: auto;
+}
+
+table {
+  max-width: 800px;
+  width: 100%;
+}
+
+.nouserscontainer {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  align-items: center;
+}
+
+mat-card {
+  margin: auto;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  max-width: 800px;
+}
