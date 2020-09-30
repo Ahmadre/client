@@ -13,6 +13,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
 
 import { UserslistComponent } from './userslist/userslist.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatCardModule,
     MatTableModule,
+    MatRippleModule,
     MatPaginatorModule,
     HttpClientModule,
     AngularFireMessagingModule,

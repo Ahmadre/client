@@ -11,6 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class UserslistComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = [
+    'id',
     'email',
     'language',
     'firstname',
@@ -18,7 +19,7 @@ export class UserslistComponent implements OnInit, AfterViewInit {
     'birthdate',
     'contactphone'
   ];
-  dataSource = new MatTableDataSource<User>([]);
+  dataSource = new MatTableDataSource<any>([]);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -32,6 +33,11 @@ export class UserslistComponent implements OnInit, AfterViewInit {
 
   async ngOnInit(): Promise<void> {
     this.users = await this.userService.getAllUsers();
+    this.dataSource.data = this.users;
   }
 
+  onPhoneTap(phonenr: number): void {
+    const call = `tel:${phonenr}`;
+    window.open(call, '_blank');
+  }
 }
