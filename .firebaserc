@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngtelexiom": {
+      "hosting": {
+        "client": [
+          "ngtelexiom"
+        ]
+      }
+    }
+  }
+}
