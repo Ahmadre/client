@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { User } from '../interfaces/user';
 import { UsersService } from '../services/users.service';
 import { MatPaginator } from '@angular/material/paginator';

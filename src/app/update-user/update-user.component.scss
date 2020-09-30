@@ -1,0 +1,38 @@
+mat-form-field {
+  margin: 15px;
+}
+
+.adduserContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sample-avatar {
+  background-image: url('../../assets/sampleavatar.png');
+  background-size: cover;
+}
+
+.nouserscontainer {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  align-items: center;
+}
+
+mat-card {
+  margin: auto;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  width: 600px;
+}
+
+.customHeader {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    
+    & > button[mat-icon-button] {
+        margin-right: 10px;
+    }
+}

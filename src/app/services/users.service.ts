@@ -25,14 +25,35 @@ export class UsersService {
 
   constructor(private http: HttpClient, private dialog: MatDialog) { }
 
+  /**
+   * Fetches all `User` instances.
+   */
   async getAllUsers(): Promise<User[]> {
     return this.http.get<User[]>(`${config.base}/users/all`)
-    .pipe<User[]>(catchError(error => this.handleError(error)))
-    .toPromise<User[]>();
+      .pipe<User[]>(catchError(error => this.handleError(error)))
+      .toPromise<User[]>();
   }
 
+  /**
+   * Creates a new `User` instance.
+   *
+   * @param newUser Defines the user to create in the persistence db.
+   *
+   */
   async addUser(newUser: User): Promise<User> {
     return this.http.post<User>(`${config.base}/users/create`, newUser, this.httpOptions)
+      .pipe<User>(catchError(error => this.handleError(error)))
+      .toPromise<User>();
+  }
+
+  /**
+   * Updates an existing `User` instance.
+   *
+   * @param user Defines the user to update in the persistence db.
+   *
+   */
+  async updateUser(user: User): Promise<User> {
+    return this.http.post<User>(`${config.base}/users/${user.email}/update`, user, this.httpOptions)
       .pipe<User>(catchError(error => this.handleError(error)))
       .toPromise<User>();
   }
@@ -63,6 +84,4 @@ export class UsersService {
       })
     });
   }
-
-
 }

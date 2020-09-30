@@ -1,0 +1,86 @@
+<ng-container *ngIf="selectedUser.value != null">
+    <div class="adduserContainer">
+        <mat-card>
+
+            <div class="customHeader">
+                <button mat-icon-button (click)="selectedUser.reset()" align="start">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <mat-card-header>
+                    <div mat-card-avatar class="sample-avatar"></div>
+                    <mat-card-title>{{selectedUser.value.firstname}} {{selectedUser.value.lastname}}
+                    </mat-card-title>
+                    <mat-card-subtitle>ID: {{selectedUser.value.id}}</mat-card-subtitle>
+                </mat-card-header>
+            </div>
+            
+
+            <mat-card-content>
+                <div [formGroup]="form" (ngSubmit)="updateUser()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Adresse</mat-label>
+                        <input matInput placeholder="Email" formControlName="email">
+                        <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Sprache wählen</mat-label>
+                        <mat-select formControlName="language">
+                            <mat-option value="de_DE">Deutsch</mat-option>
+                            <mat-option value="en_GB">Englisch</mat-option>
+                            <mat-option value="fr_FR">Französisch</mat-option>
+                            <mat-option value="es_ES">Spanisch</mat-option>
+                            <mat-option value="jp_JP">Japanisch</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Vorname</mat-label>
+                        <input matInput placeholder="Vorname" formControlName="firstname">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nachname</mat-label>
+                        <input matInput placeholder="Nachname" formControlName="lastname">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Geburtsdatum</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="birthdate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Kontakt Telefon</mat-label>
+                        <input matInput placeholder="Telefon" formControlName="contactphone">
+                        <mat-icon matSuffix>phone</mat-icon>
+                    </mat-form-field>
+
+                </div>
+            </mat-card-content>
+
+            <mat-card-actions align="end">
+                <button mat-button color="primary" type="submit" [disabled]="!form.valid"
+                    (click)="updateUser()">Aktualisieren</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="selectedUser.value == null">
+    <mat-card>
+        <div class="nouserscontainer">
+            <img src="assets/notselected.png">
+            <p>Kein Benutzer ausgewählt</p>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Benutzer wählen</mat-label>
+            <mat-select (selectionChange)="selectUser(selectedUser.value)"
+                [formControl]="selectedUser">
+                <mat-option *ngFor="let user of users" [value]="user">{{user.firstname}}
+                    {{user.lastname}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card>
+</ng-container>

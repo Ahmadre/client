@@ -5,51 +5,53 @@
             <div mat-card-avatar class="sample-avatar"></div>
             <mat-card-title>Neuer Benutzer</mat-card-title>
             <mat-card-subtitle>Bitte füllen Sie alle notwendigen Felder aus.</mat-card-subtitle>
-          </mat-card-header>
+        </mat-card-header>
 
-        <div [formGroup]="form" (ngSubmit)="addUser()">
-            <mat-form-field appearance="outline">
-                <mat-label>Email Adresse</mat-label>
-                <input matInput required placeholder="Email" formControlName="email">
-                <mat-icon matSuffix>email</mat-icon>
-            </mat-form-field>
+        <mat-card-content>
+            <div [formGroup]="form" (ngSubmit)="addUser()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Adresse</mat-label>
+                    <input matInput required placeholder="Email" formControlName="email">
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Sprache wählen</mat-label>
-                <mat-select formControlName="language">
-                    <mat-option value="de_DE">Deutsch</mat-option>
-                    <mat-option value="en_GB">Englisch</mat-option>
-                    <mat-option value="fr_FR">Französisch</mat-option>
-                    <mat-option value="es_ES">Spanisch</mat-option>
-                    <mat-option value="jp_JP">Japanisch</mat-option>
-                </mat-select>
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Sprache wählen</mat-label>
+                    <mat-select formControlName="language">
+                        <mat-option value="de_DE">Deutsch</mat-option>
+                        <mat-option value="en_GB">Englisch</mat-option>
+                        <mat-option value="fr_FR">Französisch</mat-option>
+                        <mat-option value="es_ES">Spanisch</mat-option>
+                        <mat-option value="jp_JP">Japanisch</mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Vorname</mat-label>
-                <input matInput required placeholder="Vorname" formControlName="firstname">
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Vorname</mat-label>
+                    <input matInput required placeholder="Vorname" formControlName="firstname">
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Nachname</mat-label>
-                <input matInput required placeholder="Nachname" formControlName="lastname">
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nachname</mat-label>
+                    <input matInput required placeholder="Nachname" formControlName="lastname">
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Geburtsdatum</mat-label>
-                <input matInput required [matDatepicker]="picker" formControlName="birthdate">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Geburtsdatum</mat-label>
+                    <input matInput required [matDatepicker]="picker" formControlName="birthdate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Kontakt Telefon</mat-label>
-                <input matInput required placeholder="Telefon" formControlName="contactphone">
-                <mat-icon matSuffix>phone</mat-icon>
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Kontakt Telefon</mat-label>
+                    <input matInput required placeholder="Telefon" formControlName="contactphone">
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
 
+            </div>
+        </mat-card-content>
 
-        </div>
         <mat-card-actions align="end">
             <button mat-button color="primary" type="submit" [disabled]="!form.valid"
                 (click)="addUser()">Benutzer hinzufügen</button>

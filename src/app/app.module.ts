@@ -29,6 +29,8 @@ import { UserslistComponent } from './userslist/userslist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdduserComponent } from './adduser/adduser.component';
 import { DialogContentComponent } from './dialog-content/dialog-content.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { DialogContentComponent } from './dialog-content/dialog-content.componen
     DashboardComponent,
     UserslistComponent,
     AdduserComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    UpdateUserComponent,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,
