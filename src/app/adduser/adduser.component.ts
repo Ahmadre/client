@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogData } from '../classes/dialogdata';
+import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 import { User } from '../interfaces/user';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-adduser',
@@ -19,13 +23,23 @@ export class AdduserComponent implements OnInit {
     contactphone: new FormControl('')
   });
 
-  constructor() { }
+  constructor(private userService: UsersService) { }
 
   ngOnInit(): void {
   }
 
   async addUser(): Promise<void> {
     const user: User = this.form.value;
-    console.warn(user);
+    const result: User = await this.userService.addUser(user);
+
+    if (result) {
+      this.form.reset();
+      this.userService.showAlertDialog(
+        'Benutzer erstellt',
+        `Der Benutzer: ${result.email} wurde mit der ID: ${result.id} erfolgreich angelegt.`
+      );
+    }
   }
+
+
 }

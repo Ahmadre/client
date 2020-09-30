@@ -22,18 +22,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { UserslistComponent } from './userslist/userslist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdduserComponent } from './adduser/adduser.component';
+import { DialogContentComponent } from './dialog-content/dialog-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserslistComponent,
-    AdduserComponent
+    AdduserComponent,
+    DialogContentComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { AdduserComponent } from './adduser/adduser.component';
     MatRippleModule,
     MatIconModule,
     MatButtonModule,
+    MatDialogModule,
     MatSelectModule,
     MatFormFieldModule,
     MatPaginatorModule,
