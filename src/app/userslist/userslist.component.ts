@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../interfaces/user';
-import { UserslistService } from './userslist.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { UsersService } from '../services/users.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-userslist',
@@ -25,7 +25,7 @@ export class UserslistComponent implements OnInit, AfterViewInit {
 
   users: User[] = [];
 
-  constructor(private userService: UserslistService) { }
+  constructor(private userService: UsersService) { }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
