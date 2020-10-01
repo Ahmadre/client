@@ -4,12 +4,10 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 
 import { config } from '../config';
 import { catchError } from 'rxjs/operators';
-import { never, Observable, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 import { DialogData } from '../classes/dialogdata';
-import { title } from 'process';
-import { JsonPipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
