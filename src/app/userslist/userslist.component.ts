@@ -40,4 +40,9 @@ export class UserslistComponent implements OnInit, AfterViewInit {
     const call = `tel:${phonenr}`;
     window.open(call, '_blank');
   }
+
+  onEmailTap(email: string): void {
+    const call = `mailto:${email}`;
+    window.open(call, '_blank');
+  }
 }

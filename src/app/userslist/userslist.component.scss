@@ -21,12 +21,12 @@ mat-card {
   max-width: 800px;
 }
 
-.phoneCell {
+.link {
   color: unset;
   transition: ease-in-out .5s color;
 }
 
-.phoneCell:hover {
+.link:hover {
   cursor: pointer;
   color: blue;
   transition: ease-in-out .5s color;

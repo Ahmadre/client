@@ -10,7 +10,7 @@
       <!-- Email Column -->
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef> Email </th>
-        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        <td class="link" mat-cell (click)="onEmailTap(element.email)" *matCellDef="let element"> {{element.email}} </td>
       </ng-container>
 
       <!-- Sprache Column -->
@@ -40,7 +40,7 @@
       <!-- Kontakt-Telefon Column -->
       <ng-container matColumnDef="contactphone">
         <th mat-header-cell *matHeaderCellDef> Kontakt-Telefon </th>
-        <td class="phoneCell" mat-cell (click)="onPhoneTap(element.contactphone)" matRipple *matCellDef="let element"> {{element.contactphone}} </td>
+        <td class="link" mat-cell (click)="onPhoneTap(element.contactphone)" matRipple *matCellDef="let element"> {{element.contactphone}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
