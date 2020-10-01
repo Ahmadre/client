@@ -31,3 +31,11 @@ mat-card {
   color: blue;
   transition: ease-in-out .5s color;
 }
+
+.danger {
+  color: #A00;
+
+  & svg {
+    fill: #A00;
+  }
+}
