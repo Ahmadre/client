@@ -43,6 +43,16 @@
         <td class="link" mat-cell (click)="onPhoneTap(element.contactphone)" matRipple *matCellDef="let element"> {{element.contactphone}} </td>
       </ng-container>
 
+      <!-- Optionen -->
+      <ng-container matColumnDef="options" stickyEnd>
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td *matCellDef="let element" mat-cell >
+          <button mat-icon-button (click)="confirmRemove(element)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>

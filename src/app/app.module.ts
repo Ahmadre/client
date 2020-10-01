@@ -24,13 +24,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { UserslistComponent } from './userslist/userslist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdduserComponent } from './adduser/adduser.component';
 import { DialogContentComponent } from './dialog-content/dialog-content.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
-import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +39,7 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     UserslistComponent,
     AdduserComponent,
     DialogContentComponent,
-    UpdateUserComponent,
-    DeleteUserComponent
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +51,7 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     MatButtonModule,
     MatDialogModule,
     MatSelectModule,
+    MatSnackBarModule,
     MatFormFieldModule,
     MatPaginatorModule,
     MatInputModule,

@@ -1,5 +1,9 @@
 <h1 mat-dialog-title>{{data.title}}</h1>
 <div mat-dialog-content>{{data.message}}</div>
-<div mat-dialog-actions align="end" *ngIf="data.hasCloseButton">
+<div mat-dialog-actions align="end" *ngIf="data.hasCloseButton && !data.hasConfirmButtons">
     <button mat-button mat-dialog-close>{{data.closeButtonText}}</button>
+</div>
+<div mat-dialog-actions align="end" *ngIf="!data.hasCloseButton && data.hasConfirmButtons">
+    <button mat-button [mat-dialog-close]="true">Bestätigen</button>
+    <button mat-button mat-dialog-close>Abbrechen</button>
 </div>
